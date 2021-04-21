@@ -10,12 +10,13 @@ resource "azurerm_eventhub_namespace" "eventhub_namespace" {
   auto_inflate_enabled= var.auto_inflate_enabled
 
   network_rulesets {
-    default_action = "Allow"
-    # for_each = toset(var.whitelist_ips)
-    # ip_rule {
-    #   ip_mask = var.whitelist_ips #each.key
-    #   action = "Allow"
-    # }
+    default_action = "Deny"
+    ip_rule = [
+      for ip in toset(var.whitelist_ips): {
+        ip_mask = ip
+        action = "Allow"
+      }
+    ] 
 
   }
   tags                = var.tags

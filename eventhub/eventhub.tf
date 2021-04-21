@@ -1,5 +1,6 @@
 
 
+
 resource "azurerm_eventhub" "eventhub" {
   name                = var.eventhub_name
   namespace_name      = var.eventhub_namespace_name

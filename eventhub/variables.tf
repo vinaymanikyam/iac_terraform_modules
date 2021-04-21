@@ -1,8 +1,4 @@
-variable "resource_group_name" {
-
-}
-
-variable "location" {
+variable "eventhub_name" {
 
 }
 
@@ -10,15 +6,58 @@ variable "eventhub_namespace_name" {
 
 }
 
-variable "eventhub_name" {}
+variable "resource_group_name" {
 
+}
+
+variable "eventhub_partition_count" {
+  default = 2
+}
 
 variable "eventhub_message_retention" {
   default = 1
 }
 
-variable "eventhub_partition_count" {
-  default = 2
+variable "eventhub_capture_enabled" {
+  
+}
+
+variable "eventhub_capture_encoding_type" {
+  type = string
+}
+
+variable "eventhub_capture_interval_in_seconds" {
+
+}
+
+variable "eventhub_capture_size_limit_in_bytes" {
+  default = 1000000
+}
+
+variable "eventhub_capture_skip_empty_archives" {
+  
+}
+
+variable "eventhub_capture_archive_name_format" {
+  
+}
+
+
+variable "eventhub_capture_blob_container_name" {
+  
+}
+
+variable "eventhub_capture_destination_name" {
+  
+}
+
+variable "eventhub_capture_storage_account_id" {
+  
+}
+
+
+variable "location" {
+
 }
 
 variable "tags" {
@@ -29,13 +68,17 @@ variable "eventhub_consumer_group" {
 
 }
 
-variable "create_custom_eventhub_group" {}
+variable "create_custom_eventhub_group" {
+  
+}
 
 variable "create_eventhub_authorization_rule" {
 
 }
 
-variable "eventhub_authorization_rule_name" {}
+variable "eventhub_authorization_rule_name" {
+
+}
 
 variable "eventhub_authorization_rule_listen" {
   description = "Grants listen access to Authorization Rule of the Event Hub namespace"
@@ -50,16 +93,4 @@ variable "eventhub_authorization_rule_send" {
 variable "eventhub_authorization_rule_manage" {
   description = "Grants manage access to Authorization Rule of the Event Hub namespace"
   type        = bool
-}
-
-variable "eventhub_capture_size_limit_in_bytes" {
-  default = 1000000
-}
-
-variable "eventhub_capture_interval_in_seconds" {
-
-}
-
-variable "eventhub_capture_encoding_type" {
-  type = string
 }

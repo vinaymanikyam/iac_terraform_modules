@@ -10,9 +10,9 @@ variable "eventhub_namespace_name" {
 
 }
 
-# variable "eventhub_sku" {
-#   default = "Standard"
-# }
+variable "eventhub_sku" {
+  default = "Standard"
+}
 
 variable "eventhub_zone_redundant" {
 

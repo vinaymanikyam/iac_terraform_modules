@@ -59,3 +59,7 @@ variable "eventhub_capture_size_limit_in_bytes" {
 variable "eventhub_capture_interval_in_seconds" {
 
 }
+
+variable "eventhub_capture_encoding_type" {
+  type = string
+}

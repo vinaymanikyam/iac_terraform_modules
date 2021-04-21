@@ -42,3 +42,4 @@ variable "auto_inflate_enabled" {
 variable "whitelist_ips" {
   type = list(string)
 }
+

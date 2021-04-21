@@ -39,7 +39,7 @@ variable "auto_inflate_enabled" {
 
 }
 
-variable "whitelist_ips" {
-  type = list(string)
-}
+# variable "whitelist_ips" {
+#   type = list(string)
+# }
 

@@ -13,7 +13,7 @@ resource "azurerm_eventhub_namespace" "eventhub_namespace" {
     default_action = "Allow"
     for_each = toset(var.whitelist_ips)
     ip_rule {
-      ip_mask = each.key
+      ip_mask = var.whitelist_ips #each.key
       action = "Allow"
     }
 

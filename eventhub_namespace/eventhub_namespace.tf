@@ -11,11 +11,11 @@ resource "azurerm_eventhub_namespace" "eventhub_namespace" {
 
   network_rulesets {
     default_action = "Allow"
-    for_each = toset(var.whitelist_ips)
-    ip_rule {
-      ip_mask = var.whitelist_ips #each.key
-      action = "Allow"
-    }
+    # for_each = toset(var.whitelist_ips)
+    # ip_rule {
+    #   ip_mask = var.whitelist_ips #each.key
+    #   action = "Allow"
+    # }
 
   }
   tags                = var.tags

@@ -43,17 +43,12 @@ variable "eventhub_capture_archive_name_format" {
 }
 
 
-variable "eventhub_capture_blob_container_name" {
-  
-}
+
 
 variable "eventhub_capture_destination_name" {
   
 }
 
-variable "eventhub_capture_storage_account_id" {
-  
-}
 
 
 variable "location" {

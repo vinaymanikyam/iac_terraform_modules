@@ -15,9 +15,9 @@ resource "azurerm_eventhub" "eventhub" {
     skip_empty_archives = var.eventhub_capture_skip_empty_archives
     destination {
       archive_name_format = var.eventhub_capture_archive_name_format
-      blob_container_name =  var.eventhub_capture_blob_container_name
+      blob_container_name = azurerm_storage_container.storage_container.name
       name = var.eventhub_capture_destination_name
-      storage_account_id = var.eventhub_capture_storage_account_id
+      storage_account_id = azurerm_storage_account.storage_account.id
     } 
     
   
@@ -46,4 +46,21 @@ resource "azurerm_eventhub_authorization_rule" "eventhub" {
   listen              = var.eventhub_authorization_rule_listen
   send                = var.eventhub_authorization_rule_send
   manage              = var.eventhub_authorization_rule_manage
+}
+
+
+resource "azurerm_storage_account" "storage_account" {
+  name                     =  var.storage_account_name
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
+  account_tier             =  var.storage_account_tier
+  account_replication_type =  var.storage_account_type
+
+  tags = var.tags
+}
+
+resource "azurerm_storage_container" "storage_container" {
+  name                  =  var.storage_container_name
+  storage_account_name  = azurerm_storage_account.storage_account.name
+  container_access_type = var.storage_container_access_type
 }

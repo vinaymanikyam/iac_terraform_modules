@@ -17,7 +17,7 @@ resource "azurerm_eventhub" "eventhub" {
       archive_name_format = var.eventhub_capture_archive_name_format
       blob_container_name = azurerm_storage_container.storage_container.name
       name = var.eventhub_capture_destination_name
-      storage_account_id = azurerm_storage_account.storage_account.id
+      storage_account_id = var.storage_account_id
     } 
     
   

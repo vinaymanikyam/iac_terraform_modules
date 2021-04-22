@@ -102,3 +102,7 @@ variable "storage_container_access_type" {
   
 }
 
+
+variable "storage_account_id" {
+  
+}

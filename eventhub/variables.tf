@@ -89,3 +89,24 @@ variable "eventhub_authorization_rule_manage" {
   description = "Grants manage access to Authorization Rule of the Event Hub namespace"
   type        = bool
 }
+
+variable "storage_account_name" {
+  
+}
+
+variable "storage_account_tier" {
+  
+}
+
+variable "storage_account_type" {
+  
+}
+
+variable "storage_container_name" {
+  
+}
+
+variable "storage_container_access_type" {
+  
+}
+

@@ -31,7 +31,7 @@ variable "eventhub_capture_interval_in_seconds" {
 }
 
 variable "eventhub_capture_size_limit_in_bytes" {
-  default = 1000000
+  default = 10485760
 }
 
 variable "eventhub_capture_skip_empty_archives" {

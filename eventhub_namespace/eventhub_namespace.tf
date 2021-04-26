@@ -1,5 +1,5 @@
 #######################################################################################
-###############         Manages an EventHub Namespace             #####################
+###############   Manages an EventHub Namespace and whitelsit the ip's    #############
 #######################################################################################
 
 resource "azurerm_eventhub_namespace" "eventhub_namespace" {
